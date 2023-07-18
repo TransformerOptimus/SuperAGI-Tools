@@ -4,7 +4,7 @@ import json
 from typing import Type, Optional
 from pydantic import BaseModel, Field
 from superagi.tools.base_tool import BaseTool
-from notion_helper import NotionHelper
+from helper.notion_helper import NotionHelper
 
 
 
