@@ -4,8 +4,7 @@ import json
 from typing import Type, Optional
 from pydantic import BaseModel, Field
 from superagi.tools.base_tool import BaseTool
-from superagi.helper.token_counter import TokenCounter
-from superagi.tools.notion.helper.notion_helper import NotionHelper
+from notion_helper import NotionHelper
 
 
 
@@ -55,8 +54,6 @@ class NotionfetchPageTool(BaseTool):
                     helper_content_str=notion_helper.get_page_content(page_ids[i])
                     page_content=f"page {i+1}:\n\n{helper_content_str}"
                     final_result+=(f"\n{page_content}")
-                    if TokenCounter.count_text_tokens(final_result) > 3000:
-                        break
 
                 return f"Pages fetched successfully:{final_result}"
             except Exception as err:

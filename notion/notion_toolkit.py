@@ -2,8 +2,8 @@ from abc import ABC
 from typing import List
 
 from superagi.tools.base_tool import BaseToolkit, BaseTool
-from superagi.tools.notion.notion_create_page import NotionCreatePageTool
-from superagi.tools.notion.notion_fetch_page import NotionfetchPageTool
+from notion_create_page import NotionCreatePageTool
+from notion_fetch_page import NotionfetchPageTool
 
 class NotionToolkit(BaseToolkit, ABC):
     name: str = "Notion Toolkit"
