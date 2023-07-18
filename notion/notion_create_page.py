@@ -5,12 +5,11 @@ from typing import Type, Optional
 from pydantic import BaseModel, Field
 from superagi.tools.base_tool import BaseTool
 from helper.notion_helper import NotionHelper
-from helper.tool_schema_helper import ToolSchemaHelper
 
 class NotionCreatePageSchema(BaseModel):
     content_list:  list = Field( 
         ...,
-        description=ToolSchemaHelper.read_tools_schema_description(__file__,"notion_create_page.txt"),
+        description='Be very clear about the content_list format.Here is an array of different Notion blocks that you can use in Notion create page API:["paragraph","code","heading_1","heading_2","heading_3","bulleted_list_item","numbered_list_item","to_do","quote","toggle"].content_list should be a list of dictionaries containing content,type of the content and language of the content, example: content_list=[{"type":"based on content, if no such block type exists choose it from the list provided above","content":some text,"language":"which coding language is used"}]. Strictly follow the given example and include the keys type,content and language in the dictionary',
     )
     title: str = Field(
         ...,
@@ -53,16 +52,12 @@ class NotionCreatePageTool(BaseTool):
             Page created successfully. or error message.
         """
         try:
-            Notion_token=self.get_tool_config("NOTION_TOKEN")
-            Notion_database_id=self.get_tool_config("NOTION_DATABASE_ID")
-            notion_helper=NotionHelper(Notion_token)
-            response=notion_helper.create_page(content_list,title,Notion_database_id,tags)
-            if isinstance(response, str):
-                return response
-            elif response.status_code == 200:
-                page_data = response.json()
-                page_id = page_data["id"]
-                return f"Page created successfully. Page ID: {page_id}"
+            notion_token=self.get_tool_config("NOTION_TOKEN")
+            notion_database_id=self.get_tool_config("NOTION_DATABASE_ID")
+            notion_helper=NotionHelper(notion_token)
+            response=notion_helper.create_page(content_list,title,notion_database_id,tags)
+            if response.status_code == 200:
+                return f'Page created successfully. Page ID: {response.json()["id"]}'
             else:
                 return f"Failed to create page. Status code: {response.text}"
         except Exception as err:

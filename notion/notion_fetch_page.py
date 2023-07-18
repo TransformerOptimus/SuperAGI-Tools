@@ -43,17 +43,19 @@ class NotionfetchPageTool(BaseTool):
             Pages fetched successfully. or No such page exists. or error message.
         """
         try:
-            Notion_token=self.get_tool_config("NOTION_TOKEN")
-            notion_helper=NotionHelper(Notion_token)
-            page_ids=notion_helper.get_ids(title,"page")
+            notion_token=self.get_tool_config("NOTION_TOKEN")
+            notion_helper=NotionHelper(notion_token)
+            page_ids=notion_helper.get_page_ids(title,"page")
             if len(page_ids)==0:
                 return "No such page exists."
             try:
-                final_result=""
-                for i in range(0,len(page_ids)):
-                    helper_content_str=notion_helper.get_page_content(page_ids[i])
-                    page_content=f"page {i+1}:\n\n{helper_content_str}"
+                final_result="" 
+                for index in range(0,len(page_ids)):
+                    helper_content_str=notion_helper.get_page_content(page_ids[index])
+                    page_content=f"page {index+1}:\n\n{helper_content_str}"
                     final_result+=(f"\n{page_content}")
+                    if notion_helper.count_text_tokens(final_result) > 6000:
+                        break
 
                 return f"Pages fetched successfully:{final_result}"
             except Exception as err:
