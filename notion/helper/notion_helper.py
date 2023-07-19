@@ -29,7 +29,7 @@ class NotionHelper:
         return ids
 
     def get_page_content(self,page_id):
-        res = requests.request("GET", "https://api.notion.com/v1/blocks/{page_id}/children", headers=self.headers)
+        res = requests.request("GET", f"https://api.notion.com/v1/blocks/{page_id}/children", headers=self.headers)
         content_str=""
         for block in res.json()["results"]:
             if 'text' in block[block['type']]:
