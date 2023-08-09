@@ -109,15 +109,8 @@ class reportTool(BaseTool):
     def returnDimMetrics(self):
         DimMetrics = []
         # try:
-        # with open("superagi/tools/marketplace_tools/googleanalytics/config.yaml", "r") as file:
-        with open("superagi/tools/external_tools/google-analytics-tool-superagi/config.yaml", "r") as file:
+        with open("superagi/tools/marketplace_tools/googleanalytics/config.yaml", "r") as file:
             dict = yaml.load(file, Loader=yaml.SafeLoader)
             for lists in dict["list"]:
                 DimMetrics.append([lists["Dimension"], lists["Metric"]])
             return DimMetrics
-        # except:
-        #     return [[['pageTitle'], ['totalUsers']], [
-        #         ['deviceModel', 'deviceCategory'], ['totalUsers']], [['dateHour'],
-        #                                                              ['totalUsers', 'averageSessionDuration',
-        #                                                               'bounceRate']], [['sourceMedium'],
-        #                                                                                ['totalUsers']]]
