@@ -100,11 +100,11 @@ class GoogleAnalyticsReportTool(BaseTool):
             offset=0,
         )
 
-    def returnDimMetrics(self):
-        DimMetrics = []
+    def return_dim_metrics(self):
+        dim_metrics = []
         # try:
         with open("config.yaml", "r") as file:
             dict = yaml.load(file, Loader=yaml.SafeLoader)
             for lists in dict["GOOGLE_ANALYTICS_VARIABLES"]:
-                DimMetrics.append([lists["Dimension"], lists["Metric"]])
-            return DimMetrics
+                dim_metrics.append([lists["Dimension"], lists["Metric"]])
+            return dim_metrics
