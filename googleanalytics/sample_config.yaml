@@ -1,5 +1,6 @@
 #LIST CONTAINING LISTS OF METRICS AND DIMENSIONS API NAMES TO RUN A REPORT ON
-list:
+#copy this into SUPERAGI main directory config.yaml
+GOOGLE_ANALYTICS_VARIABLES:
   - Dimension:
       - country
     Metric:

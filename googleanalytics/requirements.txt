@@ -1,4 +1,4 @@
 pydantic==1.10.8
 PyYAML==6.0
 superagi-tools==1.0.6
-google-analytics-data
+google-analytics-data==0.17.1

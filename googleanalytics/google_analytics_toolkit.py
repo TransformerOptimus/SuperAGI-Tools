@@ -2,7 +2,7 @@ from abc import ABC
 import os
 from superagi.tools.base_tool import BaseToolkit, BaseTool, ToolConfiguration
 from typing import List
-from userReport import reportTool
+from userReport import GoogleAnalyticsReportTool
 from superagi.types.key_type import ToolConfigKeyType
 
 class AnalyticsToolkit(BaseToolkit, ABC):
@@ -10,7 +10,7 @@ class AnalyticsToolkit(BaseToolkit, ABC):
     description: str = "Google Analytics Toolkit returns google analytics reports requested by the user"
 
     def get_tools(self) -> List[BaseTool]:
-        return [reportTool()]
+        return [GoogleAnalyticsReportTool()]
 
     def get_env_keys(self) -> List[str]:
         return [
