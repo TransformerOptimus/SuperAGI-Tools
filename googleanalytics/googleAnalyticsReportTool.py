@@ -54,7 +54,7 @@ class GoogleAnalyticsReportTool(BaseTool):
         if is_single_file:
             self._write_to_file(list_of_names[0], report)
 
-        os.remove("sample.json")
+        os.remove("credentials.json")
 
         response_str = " ".join(list_of_names) + "."
         return "Successfully wrote " + response_str
@@ -77,9 +77,9 @@ class GoogleAnalyticsReportTool(BaseTool):
 
     def _set_google_credentials(self, credentials: str):
         writable_credentials = json.loads(json.loads(credentials))
-        with open("sample.json", "w") as outfile:
+        with open("credentials.json", "w") as outfile:
             json.dump(writable_credentials, outfile)
-        os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "sample.json"
+        os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "credentials.json"
 
     def _generate_filename(self, dimensions, metrics, list_of_names):
         filename = dimensions[0] + metrics[0]
@@ -102,7 +102,6 @@ class GoogleAnalyticsReportTool(BaseTool):
 
     def return_dim_metrics(self):
         dim_metrics = []
-        # try:
         with open("config.yaml", "r") as file:
             dict = yaml.load(file, Loader=yaml.SafeLoader)
             for lists in dict["GOOGLE_ANALYTICS_VARIABLES"]:
