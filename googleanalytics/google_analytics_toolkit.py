@@ -2,7 +2,7 @@ from abc import ABC
 import os
 from superagi.tools.base_tool import BaseToolkit, BaseTool, ToolConfiguration
 from typing import List
-from googleAnalyticsReportTool import GoogleAnalyticsReportTool
+from google_analytics_report_tool import GoogleAnalyticsReportTool
 from superagi.types.key_type import ToolConfigKeyType
 
 class GoogleAnalyticsToolkit(BaseToolkit, ABC):
