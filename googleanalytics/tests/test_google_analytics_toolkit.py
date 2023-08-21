@@ -1,7 +1,7 @@
 import unittest
 from unittest.mock import Mock
 from superagi.tools.base_tool import BaseTool, ToolConfiguration
-from ..googleanalytics import GoogleAnalyticsToolkit
+from superagi.tools.marketplace_tools.googleanalytics.google_analytics_toolkit import GoogleAnalyticsToolkit
 
 class TestGoogleAnalyticsToolkit(unittest.TestCase):
     def setUp(self):
