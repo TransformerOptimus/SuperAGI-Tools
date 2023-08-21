@@ -14,4 +14,4 @@ Set up the SuperAGI by following the instructions given (https://github.com/Tran
 
 ## Running SuperAGI DuckDuckGo Search Tool
 
-Add this toolkit to SuperAGI, and compose docker again to use it. You can simply ask your agent about latest information regarding anything in the world and your agent will be able to browse the internet to get that information for you.
+You can simply ask your agent about latest information regarding anything in the world and your agent will be able to browse the internet to get that information for you.
