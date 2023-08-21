@@ -56,8 +56,7 @@ class GoogleAnalyticsReportTool(BaseTool):
 
         os.remove("credentials.json")
 
-        response = "Successfully wrote " + ", ".join(filenames) + "."
-        return response
+        return "Successfully wrote " + ", ".join(filenames) + "."
 
     def _generate_report(self, google_response):
         report = ""
@@ -84,7 +83,7 @@ class GoogleAnalyticsReportTool(BaseTool):
     def _generate_filename(self, dimensions, metrics, filenames):
         filename = dimensions[0] + metrics[0]
         if filename in filenames:
-            filename = filename + "New"
+            filename = filename + "_new"
         filename = filename + ".txt"
         return filename
 
