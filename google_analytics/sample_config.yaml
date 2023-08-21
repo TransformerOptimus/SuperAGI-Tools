@@ -1,0 +1,26 @@
+#LIST CONTAINING LISTS OF METRICS AND DIMENSIONS API NAMES TO RUN A REPORT ON
+#copy this into SUPERAGI main directory config.yaml
+GOOGLE_ANALYTICS_VARIABLES:
+  - Dimension:
+      - country
+    Metric:
+      - totalUsers
+  - Dimension:
+      - pageTitle
+    Metric:
+      - totalUsers
+  - Dimension:
+      - deviceModel
+      - deviceCategory
+    Metric:
+      - totalUsers
+  - Dimension:
+      - dateHour
+    Metric:
+      - totalUsers
+      - averageSessionDuration
+      - bounceRate
+  - Dimension:
+      - sourceMedium
+    Metric:
+      - totalUsers
