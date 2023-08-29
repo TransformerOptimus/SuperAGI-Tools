@@ -45,6 +45,6 @@ For the complete list of valid engine values, please visit [SerpApi Documentatio
 
 Set "Serpapi No Cache" to `true` if you want to force SerpApi to fetch the results even if a cached version is already present. Defaulted to `false`.
 
-## Running SuperAGI SerApi Tool
+## Running SuperAGI SerpApi Tool
 
 You can simply ask your agent about the latest information regarding anything and your agent will be able to browse the internet to get that information for you.
