@@ -112,6 +112,8 @@ class SerpApiSearch:
                 answer_box = answer_box[0]
             if answer_box.get("answer"):
                 answer_values.append(answer_box.get("answer"))
+            elif answer_box.get("result"):
+                answer_values.append(answer_box.get("result"))
             elif answer_box.get("snippet"):
                 answer_values.append(answer_box.get("snippet").replace("\n", " "))
             elif answer_box.get("snippet_highlighted_words"):
