@@ -1,4 +1,4 @@
-
+google_search
 pydantic==1.10.8
 PyYAML==6.0
 superagi-tools==1.0.6
