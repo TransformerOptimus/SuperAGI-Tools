@@ -1,7 +1,7 @@
 from abc import ABC
 from typing import List
 from superagi.tools.base_tool import BaseTool, BaseToolkit, ToolConfiguration
-from superagi.tools.google_search.google_search import GoogleSearchTool
+from google_search.google_search import GoogleSearchTool
 from superagi.models.tool_config import ToolConfig
 from superagi.types.key_type import ToolConfigKeyType
 
