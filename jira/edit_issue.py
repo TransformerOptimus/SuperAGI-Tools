@@ -2,7 +2,7 @@ from typing import Type
 
 from pydantic import Field, BaseModel
 
-from superagi.tools.jira.tool import JiraTool, JiraIssueSchema
+from tool import JiraTool
 
 
 class EditIssueSchema(BaseModel):

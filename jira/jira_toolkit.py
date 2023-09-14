@@ -1,10 +1,10 @@
 from abc import ABC
 from typing import List
 from superagi.tools.base_tool import BaseTool, BaseToolkit, ToolConfiguration
-from jira.create_issue import CreateIssueTool
-from jira.edit_issue import EditIssueTool
-from jira.get_projects import GetProjectsTool
-from jira.search_issues import SearchJiraTool
+from create_issue import CreateIssueTool
+from edit_issue import EditIssueTool
+from get_projects import GetProjectsTool
+from search_issues import SearchJiraTool
 from superagi.types.key_type import ToolConfigKeyType
 from superagi.models.tool_config import ToolConfig
 

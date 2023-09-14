@@ -2,7 +2,7 @@ from typing import Type, Optional
 from pydantic import BaseModel, Field
 from superagi.llms.base_llm import BaseLlm
 from superagi.tools.base_tool import BaseTool
-from superagi.tools.searx.search_scraper import search_results
+from search_scraper import search_results
 
 
 class SearxSearchSchema(BaseModel):
