@@ -1,10 +1,10 @@
 from abc import ABC
 from typing import List
 from superagi.tools.base_tool import BaseTool, BaseToolkit, ToolConfiguration
-from add_file import GithubAddFileTool
-from delete_file import GithubDeleteFileTool
-from fetch_pull_request import GithubFetchPullRequest
-from search_repo import GithubRepoSearchTool
+from github.add_file import GithubAddFileTool
+from github.delete_file import GithubDeleteFileTool
+from github.fetch_pull_request import GithubFetchPullRequest
+from github.search_repo import GithubRepoSearchTool
 from review_pull_request import GithubReviewPullRequest
 from superagi.types.key_type import ToolConfigKeyType
 
