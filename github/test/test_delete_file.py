@@ -1,6 +1,6 @@
 from unittest.mock import MagicMock, patch
 
-from delete_file import GithubDeleteFileTool, GithubDeleteFileSchema
+from github.delete_file import GithubDeleteFileTool, GithubDeleteFileSchema
 
 
 def test_github_delete_file_tool():
