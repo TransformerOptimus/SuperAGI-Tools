@@ -1,7 +1,7 @@
 from abc import ABC
 from typing import List
 from superagi.tools.base_tool import BaseTool, BaseToolkit, ToolConfiguration
-from slack.send_message import SlackMessageTool
+from send_message import SlackMessageTool
 from superagi.types.key_type import ToolConfigKeyType
 
 
