@@ -2,7 +2,7 @@ from typing import Type
 
 from pydantic import BaseModel, Field
 
-from jira.tool import JiraTool, JiraIssueSchema
+from tool import JiraTool, JiraIssueSchema
 
 
 class CreateIssueSchema(BaseModel):
