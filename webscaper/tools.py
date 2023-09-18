@@ -2,7 +2,7 @@ from typing import Type, Optional
 
 from pydantic import BaseModel, Field
 
-from webscaper.helper.webpage_extractor import WebpageExtractor
+from helper.webpage_extractor import WebpageExtractor
 from superagi.llms.base_llm import BaseLlm
 from superagi.tools.base_tool import BaseTool
 
