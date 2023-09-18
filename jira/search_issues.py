@@ -3,7 +3,7 @@ from typing import Type, Dict, List
 
 from pydantic import Field, BaseModel
 
-from helper.token_counter import TokenCounter
+from jira.helper.token_counter import TokenCounter
 from tool import JiraTool
 
 
