@@ -3,10 +3,10 @@ from typing import Type, Optional
 
 from pydantic import BaseModel, Field
 
-from superagi.helper.github_helper import GithubHelper
-from superagi.helper.json_cleaner import JsonCleaner
-from superagi.helper.prompt_reader import PromptReader
-from superagi.helper.token_counter import TokenCounter
+from helper.github_helper import GithubHelper
+from helper.json_cleaner import JsonCleaner
+from helper.prompt_reader import PromptReader
+from helper.token_counter import TokenCounter
 from superagi.llms.base_llm import BaseLlm
 from superagi.models.agent import Agent
 from superagi.tools.base_tool import BaseTool

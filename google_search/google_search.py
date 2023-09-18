@@ -3,8 +3,8 @@ from typing import Type, Optional
 
 from pydantic import BaseModel, Field
 
-from superagi.helper.google_search import GoogleSearchWrap
-from superagi.helper.token_counter import TokenCounter
+from helper.google_search import GoogleSearchWrap
+from helper.token_counter import TokenCounter
 from superagi.llms.base_llm import BaseLlm
 from superagi.tools.base_tool import BaseTool
 

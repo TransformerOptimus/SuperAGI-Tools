@@ -1,7 +1,7 @@
 from typing import Type, Optional, Any
 from pydantic import BaseModel, Field
 import aiohttp
-from superagi.helper.google_serp import GoogleSerpApiWrap
+from helper.google_serp import GoogleSerpApiWrap
 from superagi.llms.base_llm import BaseLlm
 from superagi.tools.base_tool import BaseTool
 import os
