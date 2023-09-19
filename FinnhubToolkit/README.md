@@ -1,4 +1,29 @@
-I am not affiliated with either SuperAGI or any financial institutions whose API this plugin uses.
+This toolkit allows for financial queries from Finnhub(https://finnhub.io/)
+
+It mostly uses their free API, but paid calls can be added if anyone requires them.
+You need to sign up for a (free) Finnhub API account to use it. Free plan is limited to 30 API calls per minute.
+
+Tools available:
+
+Basic Financials: Such as margin, P/E ratio, 52-week high/low etc, for a company ticker.
+
+Candles: Get candlestick data (OHLCV) for stocks.
+
+Company news: List latest company news by symbol.
+
+Market news: Get latest market news.
+
+Quote: Get real-time quote data for US stocks.
+
+Technical Indicators: Return technical indicator with price data.
+
+
+
+
+
+Disclaimer:
+
+I am not affiliated with either SuperAGI or Finnhub.
 
 I believe the LICENSE voids any responsibility, but I will say this anyway:
 
