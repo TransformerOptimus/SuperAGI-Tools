@@ -3,7 +3,7 @@ from typing import Type, Optional
 from pydantic import BaseModel, Field
 from assets.base_file import BaseToolClient
 # from superagi.helper.s3_helper import upload_to_s3
-from superagi.resource_manager.file_manager import FileManager
+from assets.base_file import BaseToolClient
 from superagi.tools.base_tool import BaseTool
 
 
@@ -30,7 +30,7 @@ class WriteFileTool(BaseTool):
     args_schema: Type[BaseModel] = WriteFileInput
     description: str = "Writes text to a file"
     agent_id: int = None
-    resource_manager: Optional[FileManager] = None
+    resource_manager: Optional[BaseToolClient] = None
 
     class Config:
         arbitrary_types_allowed = True
@@ -46,6 +46,6 @@ class WriteFileTool(BaseTool):
         Returns:
             success message if message is file written successfully or failure message if writing file fails.
         """
-        base_tool_client = BaseToolClient()
-        return base_tool_client.use_file_manager_write_file(file_name,content)
+        
+        return self.resource_manager.use_file_manager_write_file(file_name,content)
         # return self.resource_manager.write_file(file_name, content)
