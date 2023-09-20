@@ -1,10 +1,11 @@
 # Filename: assets/base_tool_client.py
 from typing import List ,Optional, Type, Callable, Any, Union, Dict, Tuple 
+from sqlalchemy.orm import Session
 from superagi.tools.base_tool import BaseFileManager
 
 class BaseToolClient:
-    def __init__(self):
-        self.file_manager = BaseFileManager()
+    def __init__(self,Session:Session):
+        self.file_manager = BaseFileManager(Session)
 
     def use_file_manager_read_file(self, file_name):
         content = self.file_manager.read_file(file_name)
