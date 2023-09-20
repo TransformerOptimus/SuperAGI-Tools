@@ -1,5 +1,5 @@
 from typing import Type, Optional
-
+from sqlalchemy.orm import Session
 from pydantic import BaseModel, Field
 from superagi.tools.base_tool import BaseTool
 from assets.base_file import BaseToolClient
@@ -28,7 +28,7 @@ class WriteFileTool(BaseTool):
     description: str = "Writes text to a file"
     agent_id: int = None
     resource_manager: Optional[BaseToolClient] = None
-
+    Session=Session()
     class Config:
         arbitrary_types_allowed = True
 
@@ -43,7 +43,8 @@ class WriteFileTool(BaseTool):
         Returns:
             success message if message is file written successfully or failure message if writing file fails.
         """
-        self.resource_manager = BaseToolClient()
+        
+        self.resource_manager = BaseToolClient(Session)
         
         return self.resource_manager.use_file_manager_write_file(file_name,content)
         # return self.resource_manager.write_file(file_name, content)
