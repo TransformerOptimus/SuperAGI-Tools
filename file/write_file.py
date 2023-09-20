@@ -2,7 +2,7 @@ from typing import Type, Optional
 
 from pydantic import BaseModel, Field
 from superagi.tools.base_tool import BaseTool
-from superagi.tools.marketplace_tools.file.assets.base_file import BaseToolClient
+from assets.base_file import BaseToolClient
 
 # from superagi.helper.s3_helper import upload_to_s3
 
@@ -43,6 +43,7 @@ class WriteFileTool(BaseTool):
         Returns:
             success message if message is file written successfully or failure message if writing file fails.
         """
+        self.resource_manager = BaseToolClient()
         
         return self.resource_manager.use_file_manager_write_file(file_name,content)
         # return self.resource_manager.write_file(file_name, content)
