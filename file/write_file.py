@@ -44,7 +44,7 @@ class WriteFileTool(BaseTool):
             success message if message is file written successfully or failure message if writing file fails.
         """
         
-        self.resource_manager = BaseToolClient(self,Session)
+        self.resource_manager = BaseToolClient(self.Session)
         
         return self.resource_manager.use_file_manager_write_file(file_name,content)
         # return self.resource_manager.write_file(file_name, content)
