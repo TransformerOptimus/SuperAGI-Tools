@@ -5,7 +5,7 @@ from superagi.tools.base_tool import BaseFileManager
 
 class BaseToolClient:
     def __init__(self,Session:Session):
-        self.file_manager = BaseFileManager(Session)
+        self.file_manager = BaseFileManager(self,Session)
 
     def use_file_manager_read_file(self, file_name):
         content = self.file_manager.read_file(file_name)
