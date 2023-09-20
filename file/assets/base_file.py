@@ -1,6 +1,6 @@
 # Filename: assets/base_tool_client.py
 from typing import List ,Optional, Type, Callable, Any, Union, Dict, Tuple 
-from tools.base_tool import BaseFileManager
+from superagi.tools.base_tool import BaseFileManager
 
 class BaseToolClient:
     def __init__(self):
