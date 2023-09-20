@@ -1,20 +1,10 @@
 # Filename: assets/base_tool_client.py
 from typing import List ,Optional, Type, Callable, Any, Union, Dict, Tuple 
-from base_tool import BaseTool, BaseToolkit, FileManager
+from base_tool import BaseFileManager
 
 class BaseToolClient:
     def __init__(self):
-        self.tool = BaseTool()
-        self.toolkit = BaseToolkit()
-        self.file_manager = FileManager()
-
-    def use_tool_execute_method(self, tool_input: Union[str, Dict], **kwargs: Any) -> Any:
-        result = self.tool.execute(tool_input, **kwargs)
-        return result
-
-    def use_toolkit_get_tools(self):
-        tools = self.toolkit.get_tools()
-        return tools
+        self.file_manager = BaseFileManager()
 
     def use_file_manager_read_file(self, file_name):
         content = self.file_manager.read_file(file_name)
