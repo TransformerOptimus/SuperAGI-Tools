@@ -28,7 +28,7 @@ class WriteFileTool(BaseTool):
     description: str = "Writes text to a file"
     agent_id: int = None
     resource_manager: Optional[BaseToolClient] = None
-    Session=Session()
+    session=Session()
     class Config:
         arbitrary_types_allowed = True
 
@@ -44,7 +44,7 @@ class WriteFileTool(BaseTool):
             success message if message is file written successfully or failure message if writing file fails.
         """
         
-        self.resource_manager = BaseToolClient(self.Session)
+        self.resource_manager = BaseToolClient(self.session)
         
         return self.resource_manager.use_file_manager_write_file(file_name,content)
         # return self.resource_manager.write_file(file_name, content)
