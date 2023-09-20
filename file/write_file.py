@@ -1,10 +1,8 @@
 from typing import Type, Optional
 
 from pydantic import BaseModel, Field
-# from superagi.helper.s3_helper import upload_to_s3
-from assets.base_file import BaseToolClient
 from superagi.tools.base_tool import BaseTool
-
+from superagi.tools.marketplace_tools.file.assets.base_file import BaseToolClient
 
 # from superagi.helper.s3_helper import upload_to_s3
 
