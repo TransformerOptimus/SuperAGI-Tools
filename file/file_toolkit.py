@@ -1,11 +1,11 @@
 from abc import ABC
 from typing import List
 from superagi.tools.base_tool import BaseTool, BaseToolkit, ToolConfiguration
-from superagi.tools.file.append_file import AppendFileTool
-from superagi.tools.file.delete_file import DeleteFileTool
-from superagi.tools.file.list_files import ListFileTool
-from superagi.tools.file.read_file import ReadFileTool
-from superagi.tools.file.write_file import WriteFileTool
+from append_file import AppendFileTool
+from delete_file import DeleteFileTool
+from list_files import ListFileTool
+from read_file import ReadFileTool
+from write_file import WriteFileTool
 from superagi.types.key_type import ToolConfigKeyType
 from superagi.models.tool_config import ToolConfig
 
