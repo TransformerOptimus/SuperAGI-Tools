@@ -28,7 +28,7 @@ class WriteFileTool(BaseTool):
     description: str = "Writes text to a file"
     agent_id: int = None
     resource_manager: Optional[BaseToolClient] = None
-    session=Session()
+    session=Session
     class Config:
         arbitrary_types_allowed = True
 
