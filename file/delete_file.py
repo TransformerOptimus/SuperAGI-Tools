@@ -12,6 +12,7 @@ from superagi.config.config import get_config
 from superagi.helper.s3_helper import S3Helper
 
 
+
 class DeleteFileInput(BaseModel):
     """Input for CopyFileTool."""
     file_name: str = Field(..., description="Name of the file to delete")

@@ -1,13 +1,23 @@
 from typing import List
-
+from abc import abstractmethod
+from pydantic import BaseModel,Field
 import tiktoken
-
-from superagi.types.common import BaseMessage
-from superagi.lib.logger import logger
 from superagi.models.models import Models
 from sqlalchemy.orm import Session
 
 
+class BaseMessage(BaseModel):
+    """Base message object."""
+
+    content: str
+    additional_kwargs: dict = Field(default_factory=dict)
+
+    @property
+    @abstractmethod
+    def type(self) -> str:
+        """Message type used."""
+        
+        
 class TokenCounter:
 
     def __init__(self, session:Session=None, organisation_id: int=None):
@@ -31,7 +41,6 @@ class TokenCounter:
             model_token_limit_dict = (Models.fetch_model_tokens(self.session, self.organisation_id))
             return model_token_limit_dict[model]
         except KeyError:
-            logger.warning("Warning: model not found. Using cl100k_base encoding.")
             return 8092
 
     @staticmethod
@@ -56,7 +65,6 @@ class TokenCounter:
                                             "models/chat-bison-001": 4}
             encoding = tiktoken.encoding_for_model(model)
         except KeyError:
-            logger.warning("Warning: model not found. Using cl100k_base encoding.")
             encoding = tiktoken.get_encoding("cl100k_base")
 
         if model in model_token_per_message_dict.keys():

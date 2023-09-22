@@ -1,9 +1,6 @@
 import asyncio
 from typing import Any, List
-
 import aiohttp
-
-from superagi.config.config import get_config
 from webpage_extractor import WebpageExtractor
 
 

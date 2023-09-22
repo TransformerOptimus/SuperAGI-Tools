@@ -1,11 +1,24 @@
 from typing import List
-
 import tiktoken
-
-from superagi.types.common import BaseMessage
 from superagi.lib.logger import logger
 from superagi.models.models import Models
 from sqlalchemy.orm import Session
+
+from typing import List
+from abc import abstractmethod
+from pydantic import BaseModel,Field
+
+
+class BaseMessage(BaseModel):
+    """Base message object."""
+
+    content: str
+    additional_kwargs: dict = Field(default_factory=dict)
+
+    @property
+    @abstractmethod
+    def type(self) -> str:
+        """Message type used."""
 
 
 class TokenCounter:

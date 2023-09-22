@@ -2,7 +2,7 @@ from typing import Type, Optional
 from sqlalchemy.orm import Session
 from pydantic import BaseModel, Field
 from superagi.tools.base_tool import BaseTool
-from assets.base_file import BaseToolClient
+from file.helper.base_file import BaseToolClient
 
 # from superagi.helper.s3_helper import upload_to_s3
 
@@ -43,7 +43,7 @@ class WriteFileTool(BaseTool):
             success message if message is file written successfully or failure message if writing file fails.
         """
         
-        self.resource_manager = BaseToolClient(Session())
+        # self.resource_manager = BaseToolClient(Session())
         
-        return self.resource_manager.use_file_manager_write_file(file_name,content)
-        # return self.resource_manager.write_file(file_name, content)
+        # return self.resource_manager.use_file_manager_write_file(file_name,content)
+        return self.resource_manager.write_file(file_name, content)  

@@ -2,7 +2,6 @@ from abc import ABC
 from typing import List
 from superagi.tools.base_tool import BaseTool, BaseToolkit, ToolConfiguration
 from google_serp_search.google_serp_search import GoogleSerpTool
-from superagi.models.tool_config import ToolConfig
 from superagi.types.key_type import ToolConfigKeyType
 
 class GoogleSerpToolkit(BaseToolkit, ABC):
