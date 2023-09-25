@@ -4,9 +4,9 @@ from typing import Type
 
 from pydantic import BaseModel, Field
 
-from email.helper.imap_email import ImapEmail
-from email.helper.read_email import ReadEmail
-from email.helper.token_counter import TokenCounter
+from superagi.tools.marketplace_tools.email.helper.imap_email import ImapEmail
+from superagi.tools.marketplace_tools.email.helper.read_email import ReadEmail
+from superagi.tools.marketplace_tools.email.helper.token_counter import TokenCounter
 from superagi.tools.base_tool import BaseTool
 
 

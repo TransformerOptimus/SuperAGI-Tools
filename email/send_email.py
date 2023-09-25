@@ -5,7 +5,7 @@ from email.message import EmailMessage
 from typing import Type
 
 from pydantic import BaseModel, Field
-from email.helper.imap_email import ImapEmail
+from superagi.tools.marketplace_tools.email.helper.imap_email import ImapEmail
 from superagi.tools.base_tool import BaseTool
 
 
