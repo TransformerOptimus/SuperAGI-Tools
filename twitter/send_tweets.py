@@ -3,7 +3,7 @@ from typing import Type
 from pydantic import BaseModel, Field
 
 from superagi.helper.twitter_helper import TwitterHelper
-from superagi.helper.twitter_tokens import TwitterTokens
+from helper.twitter_tokens import TwitterTokens
 from superagi.tools.base_tool import BaseTool
 
 
