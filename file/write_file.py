@@ -2,7 +2,9 @@ from typing import Type, Optional
 from sqlalchemy.orm import Session
 from pydantic import BaseModel, Field
 from superagi.tools.base_tool import BaseTool
-from file.helper.base_file import BaseToolClient
+from superagi.tools.base_tool import FileManager
+
+superagi/tools/base_tool.py
 
 # from superagi.helper.s3_helper import upload_to_s3
 
@@ -27,7 +29,7 @@ class WriteFileTool(BaseTool):
     args_schema: Type[BaseModel] = WriteFileInput
     description: str = "Writes text to a file"
     agent_id: int = None
-    resource_manager: Optional[BaseToolClient] = None
+    resource_manager: Optional[FileManager] = None
     class Config:
         arbitrary_types_allowed = True
 
