@@ -18,28 +18,13 @@ from superagi.helper.s3_helper import S3Helper
 from superagi.models.agent import Agent
 from superagi.models.agent_execution import AgentExecution
 from superagi.tools.base_tool import BaseTool
+from superagi.types.storage_types import StorageType
 
 class SendEmailAttachmentInput(BaseModel):
     to: str = Field(..., description="Email Address of the Receiver, default email address is 'example@example.com'")
     subject: str = Field(..., description="Subject of the Email to be sent")
     body: str = Field(..., description="Email Body to be sent, Do not add senders details in the email body and end it with Warm Regards without entering any name.")
     filename: str = Field(..., description="Name of the file to be sent as an Attachment with Email")
-    
-
-
-
-class StorageType(Enum):
-    FILE = 'FILE'
-    S3 = 'S3'
-
-    @classmethod
-    def get_storage_type(cls, store):
-        if store is None:
-            raise ValueError("Storage type cannot be None.")
-        store = store.upper()
-        if store in cls.__members__:
-            return cls[store]
-        raise ValueError(f"{store} is not a valid storage name.")
    
 
 
