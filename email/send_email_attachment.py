@@ -12,7 +12,7 @@ from enum import Enum
 from pydantic import BaseModel, Field
 
 from superagi.config.config import get_config
-from helper.imap_email import ImapEmail
+from superagi.tools.marketplace_tools.email.helper.imap_email import ImapEmail
 from superagi.helper.resource_helper import ResourceHelper
 from superagi.helper.s3_helper import S3Helper
 from superagi.models.agent import Agent
