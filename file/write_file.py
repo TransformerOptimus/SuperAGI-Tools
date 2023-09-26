@@ -4,8 +4,6 @@ from pydantic import BaseModel, Field
 from superagi.tools.base_tool import BaseTool
 from superagi.tools.base_tool import FileManager
 
-superagi/tools/base_tool.py
-
 # from superagi.helper.s3_helper import upload_to_s3
 
 class WriteFileInput(BaseModel):
