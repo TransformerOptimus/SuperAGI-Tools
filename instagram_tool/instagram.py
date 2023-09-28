@@ -2,21 +2,20 @@ import json
 import urllib
 import boto3
 import os
-from superagi.config.config import get_config
-from superagi.helper.resource_helper import ResourceHelper
-from typing import Type, Optional
-from pydantic import BaseModel, Field
-from superagi.helper.token_counter import TokenCounter
-from superagi.llms.base_llm import BaseLlm
-from superagi.tools.base_tool import BaseTool
+from enum import Enum
 import os
 import requests
-from superagi.tools.tool_response_query_manager import ToolResponseQueryManager
+from typing import Type, Optional
 import random
+from superagi.config.config import get_config
+from superagi.helper.resource_helper import ResourceHelper
+from pydantic import BaseModel, Field
+from superagi.llms.base_llm import BaseLlm
+from superagi.tools.base_tool import BaseTool
+from superagi.tools.tool_response_query_manager import ToolResponseQueryManager
 from superagi.models.agent import Agent
 from superagi.models.agent_execution import AgentExecution
 from superagi.helper.s3_helper import S3Helper
-from superagi.types.storage_types import StorageType
 
 class InstagramSchema(BaseModel):
     photo_description: str = Field(
@@ -25,6 +24,18 @@ class InstagramSchema(BaseModel):
     )
     filename: str = Field(..., description="Name of the file to be posted. Only one file can be posted at a time.")
 
+class StorageType(Enum):
+    FILE = 'FILE'
+    S3 = 'S3'
+
+    @classmethod
+    def get_storage_type(cls, store):
+        if store is None:
+            raise ValueError("Storage type cannot be None.")
+        store = store.upper()
+        if store in cls.__members__:
+            return cls[store]
+        raise ValueError(f"{store} is not a valid storage name.")
 
 class InstagramTool(BaseTool):
     """
