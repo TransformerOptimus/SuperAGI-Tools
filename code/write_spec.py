@@ -3,11 +3,11 @@ from typing import Type, Optional, List
 from pydantic import BaseModel, Field
 
 from superagi.agent.agent_prompt_builder import AgentPromptBuilder
-from superagi.helper.prompt_reader import PromptReader
-from superagi.helper.token_counter import TokenCounter
+from helper.prompt_reader import PromptReader
+from helper.token_counter import TokenCounter
 from superagi.lib.logger import logger
 from superagi.llms.base_llm import BaseLlm
-from superagi.resource_manager.file_manager import FileManager
+from superagi.tools.base_tool import FileManager
 from superagi.tools.base_tool import BaseTool
 from superagi.models.agent import Agent
 

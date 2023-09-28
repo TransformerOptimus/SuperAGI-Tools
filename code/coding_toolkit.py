@@ -2,10 +2,10 @@ from abc import ABC
 from typing import List
 
 from superagi.tools.base_tool import BaseToolkit, BaseTool, ToolConfiguration
-from superagi.tools.code.improve_code import ImproveCodeTool
-from superagi.tools.code.write_code import CodingTool
-from superagi.tools.code.write_spec import WriteSpecTool
-from superagi.tools.code.write_test import WriteTestTool
+from improve_code import ImproveCodeTool
+from write_code import CodingTool
+from write_spec import WriteSpecTool
+from write_test import WriteTestTool
 
 
 class CodingToolkit(BaseToolkit, ABC):
