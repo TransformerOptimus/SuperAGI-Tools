@@ -3,7 +3,7 @@ from pydantic import BaseModel, Field
 from superagi.tools.base_tool import BaseTool
 from sqlalchemy.orm import sessionmaker
 from superagi.models.db import connect_db
-from google_calendar.helper.google_calendar_creds  import GoogleCalendarCreds
+from superagi.tools.marketplace_tools.google_calendar.helper.google_calendar_creds  import GoogleCalendarCreds
 
 class DeleteCalendarEventInput(BaseModel):
     event_id: str = Field(..., description="The id of event to be deleted from Google Calendar. default value is None")

@@ -5,9 +5,9 @@ from typing import Type
 from superagi.config.config import get_config
 from pydantic import BaseModel, Field
 from superagi.tools.base_tool import BaseTool
-from google_calendar.helper.google_calendar_creds import GoogleCalendarCreds
-from google_calendar.helper.calendar_date import CalendarDate
-from superagi.resource_manager.file_manager import FileManager
+from superagi.tools.marketplace_tools.google_calendar.helper.google_calendar_creds import GoogleCalendarCreds
+from superagi.tools.marketplace_tools.google_calendar.helper.calendar_date import CalendarDate
+from superagi.tools.base_tool import FileManager
 from superagi.helper.s3_helper import S3Helper
 from urllib.parse import urlparse, parse_qs
 from sqlalchemy.orm import sessionmaker

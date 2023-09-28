@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field
 
 from superagi.image_llms.openai_dalle import OpenAiDalle
 from superagi.llms.base_llm import BaseLlm
-from superagi.resource_manager.file_manager import FileManager
+from superagi.tools.base_tool import FileManager
 from superagi.models.toolkit import Toolkit
 from superagi.models.configuration import Configuration
 from superagi.tools.base_tool import BaseTool

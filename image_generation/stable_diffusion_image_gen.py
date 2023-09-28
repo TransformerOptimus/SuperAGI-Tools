@@ -6,7 +6,7 @@ import requests
 from PIL import Image
 from pydantic import BaseModel, Field
 from superagi.helper.resource_helper import ResourceHelper
-from superagi.resource_manager.file_manager import FileManager
+from superagi.tools.base_tool import FileManager
 from superagi.tools.base_tool import BaseTool
 from superagi.models.agent_execution import AgentExecution
 from superagi.models.agent import Agent

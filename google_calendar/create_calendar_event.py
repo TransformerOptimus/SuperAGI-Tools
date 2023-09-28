@@ -3,8 +3,8 @@ from pydantic import BaseModel, Field
 from superagi.tools.base_tool import BaseTool
 from sqlalchemy.orm import sessionmaker
 from superagi.models.db import connect_db
-from google_calendar.helper.google_calendar_creds import GoogleCalendarCreds
-from google_calendar.helper.calendar_date import CalendarDate
+from superagi.tools.marketplace_tools.google_calendar.helper.google_calendar_creds import GoogleCalendarCreds
+from superagi.tools.marketplace_tools.google_calendar.helper.calendar_date import CalendarDate
 
 class CreateEventCalendarInput(BaseModel):
     event_name: str = Field(..., description="Name of the event/meeting to be scheduled, if not given craete a name depending on description.")
