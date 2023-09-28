@@ -1,7 +1,6 @@
 import json
 import urllib
 import boto3
-import os
 from enum import Enum
 import os
 import requests
