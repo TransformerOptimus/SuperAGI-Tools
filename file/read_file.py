@@ -11,7 +11,7 @@ from ebooklib import epub
 from superagi.helper.resource_helper import ResourceHelper
 from superagi.helper.s3_helper import S3Helper
 from superagi.models.agent_execution import AgentExecution
-from superagi.resource_manager.file_manager import FileManager
+from superagi.tools.base_tool import FileManager
 from superagi.tools.base_tool import BaseTool
 from superagi.models.agent import Agent
 from superagi.types.storage_types import StorageType
