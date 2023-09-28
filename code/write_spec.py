@@ -3,8 +3,8 @@ from typing import Type, Optional, List
 from pydantic import BaseModel, Field
 
 from superagi.agent.agent_prompt_builder import AgentPromptBuilder
-from helper.prompt_reader import PromptReader
-from helper.token_counter import TokenCounter
+from superagi.tools.marketplace_tools.code.helper.prompt_reader import PromptReader
+from superagi.tools.marketplace_tools.code.helper.token_counter import TokenCounter
 from superagi.lib.logger import logger
 from superagi.llms.base_llm import BaseLlm
 from superagi.tools.base_tool import FileManager

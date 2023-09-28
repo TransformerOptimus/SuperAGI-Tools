@@ -11,8 +11,8 @@ from superagi.models.agent import Agent
 
 from superagi.tools.base_tool import FileManager
 
-from helper.prompt_reader import PromptReader
-from helper.token_counter import TokenCounter
+from superagi.tools.marketplace_tools.code.helper.prompt_reader import PromptReader
+from superagi.tools.marketplace_tools.code.helper.token_counter import TokenCounter
 
 class WriteTestSchema(BaseModel):
     test_description: str = Field(
