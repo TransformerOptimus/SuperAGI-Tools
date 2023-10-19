@@ -1,0 +1,145 @@
+{
+    "test_invalid_input": "Passed",
+    "test_no_results": "Passed",
+    "test_successful_retrieval": {
+        "status": "ok",
+        "totalResults": 6,
+        "articles": {
+            "articles": [
+                {
+                    "source": {
+                        "id": "bbc-news",
+                        "name": "BBC News"
+                    },
+                    "author": "https://www.facebook.com/bbcnews",
+                    "title": "India LGBTQ wedding sparks controversy in Punjab",
+                    "description": "The marriage was solemnised in a Sikh temple, with the couple performing all traditional rituals.",
+                    "url": "https://www.bbc.co.uk/news/world-asia-india-66877902",
+                    "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/1599A/production/_131247488_img_2489.jpg",
+                    "publishedAt": "2023-09-26T00:20:12Z",
+                    "content": "While India waits for the Supreme Court's verdict on legalising same-sex marriage, an LGBTQ couple's recent wedding in the northern state of Punjab has made headlines - and also created controversy. \u2026 [+4959 chars]"
+                },
+                {
+                    "source": {
+                        "id": "bbc-news",
+                        "name": "BBC News"
+                    },
+                    "author": "https://www.facebook.com/bbcnews",
+                    "title": "Can India-Europe corridor rival China's Belt and Road?",
+                    "description": "The new corridor was announced on the sidelines of the G20 summit, but challenges remain.",
+                    "url": "https://www.bbc.co.uk/news/world-asia-india-66957019",
+                    "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/ABB6/production/_131285934_gettyimages-1653994166-594x594.jpg",
+                    "publishedAt": "2023-10-02T00:12:47Z",
+                    "content": "A new transport corridor announced on the sidelines of the G20 summit in Delhi will become the basis of world trade for hundreds of years to come, Indian Prime Minister Narendra Modi said in a recent\u2026 [+6288 chars]"
+                },
+                {
+                    "source": {
+                        "id": "bbc-news",
+                        "name": "BBC News"
+                    },
+                    "author": "https://www.facebook.com/bbcnews",
+                    "title": "Zainab Abbas: Pakistani cricket commentator leaves India after backlash",
+                    "description": "ICC said Zainab Abbas left India for personal reasons amid local media claims she was forced to go.",
+                    "url": "https://www.bbc.co.uk/news/world-asia-india-67062102",
+                    "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/796F/production/_131378013_gettyimages-1155300123-594x594.jpg",
+                    "publishedAt": "2023-10-10T06:33:23Z",
+                    "content": "A Pakistani presenter covering the Cricket World Cup in India has left the country after a backlash over alleged \"derogatory\" posts on social media.\r\nZainab Abbas was part of the International Cricke\u2026 [+2660 chars]"
+                },
+                {
+                    "source": {
+                        "id": "bbc-news",
+                        "name": "BBC News"
+                    },
+                    "author": "https://www.facebook.com/bbcnews",
+                    "title": "India aims to send astronaut to the Moon by 2040",
+                    "description": "The country's space goals also include include plans for a space station by 2035.",
+                    "url": "https://www.bbc.co.uk/news/world-asia-india-67142307",
+                    "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/AB1E/production/_131460834_gettyimages-1531892466.jpg",
+                    "publishedAt": "2023-10-18T04:52:05Z",
+                    "content": "India aims to send an astronaut to the Moon by 2040, the government has said.\r\nThe country's space goals also include plans for a space station by 2035.\r\nPrime Minister Narendra Modi announced these \u2026 [+770 chars]"
+                },
+                {
+                    "source": {
+                        "id": "bbc-news",
+                        "name": "BBC News"
+                    },
+                    "author": "https://www.facebook.com/bbcnews",
+                    "title": "India Supreme Court declines to legalise same-sex marriage",
+                    "description": "The Supreme Court's refusal to legalise same-sex marriage has dashed the hopes of India's LGBTQ+ people.",
+                    "url": "https://www.bbc.co.uk/news/world-asia-india-65525980",
+                    "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/799F/production/_131453113_11df3d4aa58c0c2d2f59442270c0b183a0970ed2.jpg",
+                    "publishedAt": "2023-10-17T11:44:16Z",
+                    "content": "India's Supreme Court has declined to legalise same-sex unions, dashing the hopes of millions of LGBTQ+ people seeking marriage equality.\r\nThe court instead accepted the government's offer to set up \u2026 [+5266 chars]"
+                },
+                {
+                    "source": {
+                        "id": "bbc-news",
+                        "name": "BBC News"
+                    },
+                    "author": null,
+                    "title": "Ros Atkins on\u2026 the India-Canada murder row",
+                    "description": "The BBC's analysis editor looks at why India and Canada have entered a diplomatic spat over the murder of a Sikh activist.",
+                    "url": "https://www.bbc.co.uk/news/av/world-66861766",
+                    "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/40E5/production/_131131661_p0gfjhrp.jpg",
+                    "publishedAt": "2023-09-19T20:35:02Z",
+                    "content": "The escalating row over the murder of a Sikh separatist leader has the potential to derail years of close relations between Canada and India - two key strategic partners on security and trade. \r\nThe \u2026 [+211 chars]"
+                },
+                {
+                    "source": {
+                        "id": "bbc-news",
+                        "name": "BBC News"
+                    },
+                    "author": "https://www.facebook.com/bbcnews",
+                    "title": "Hardeep Singh Nijjar: Why Western nations fear India-Canada row",
+                    "description": "India is the fifth largest economy and is seen by the West as a key partner against China.",
+                    "url": "https://www.bbc.co.uk/news/world-us-canada-66856568",
+                    "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/EBE8/production/_131129306_sunak_biden_getty.png",
+                    "publishedAt": "2023-09-19T15:31:46Z",
+                    "content": "Western ministers and officials will be working hard to try to ensure the diplomatic row between Canada and India does not bleed into other international relationships. \r\nThe last thing the United St\u2026 [+3046 chars]"
+                },
+                {
+                    "source": {
+                        "id": "bbc-news",
+                        "name": "BBC News"
+                    },
+                    "author": null,
+                    "title": "India flash floods: More than 100 missing in Sikkim state",
+                    "description": "Hundreds of search and rescue officers have been deployed across the state of Sikkim.",
+                    "url": "https://www.bbc.co.uk/news/av/world-67015721",
+                    "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/179F1/production/_131335769_p0gjk40h.jpg",
+                    "publishedAt": "2023-10-05T07:25:09Z",
+                    "content": "Flash flooding has hit parts of northeastern India killing more than a dozen people. More than 100 are still missing including 22 soldiers. \r\nHeavy rain over Lhonak lake in the state of Sikkim trigge\u2026 [+288 chars]"
+                },
+                {
+                    "source": {
+                        "id": "bbc-news",
+                        "name": "BBC News"
+                    },
+                    "author": "https://www.facebook.com/bbcnews",
+                    "title": "Who was Canadian Sikh leader Hardeep Singh Nijjar?",
+                    "description": "Hardeep Singh Nijjar's fatal shooting in June placed him at the center of a rift between India and Canada.",
+                    "url": "https://www.bbc.co.uk/news/world-us-canada-66860510",
+                    "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/F6A7/production/_131134136_1b2ff35c648b948a8352251256a7fd121e37ef5a1961_0_3922_39221000x1000.jpg",
+                    "publishedAt": "2023-09-20T21:16:18Z",
+                    "content": "Canada has accused India of being linked to the murder of a Sikh leader on Canadian soil, fuelling a significant rift between the two countries. Who was the man, Hardeep Singh Nijjar, at the centre o\u2026 [+6396 chars]"
+                },
+                {
+                    "source": {
+                        "id": "bbc-news",
+                        "name": "BBC News"
+                    },
+                    "author": "https://www.facebook.com/bbcnews",
+                    "title": "Maldives election: Pro-China candidate Muizzu wins presidency",
+                    "description": "Mohamed Muizzu ran an \"India out\" campaign as the current leader favours good relations with Delhi.",
+                    "url": "https://www.bbc.co.uk/news/world-asia-66972981",
+                    "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/151E3/production/_131299468_d67c4b0acb814cebf0e5326d8d94782849061797.jpg",
+                    "publishedAt": "2023-09-30T20:58:03Z",
+                    "content": "A pro-China candidate has won presidential elections in the Maldives, defeating an incumbent who had strengthened relations with India.\r\nPresident Ibrahim Mohamed Solih accepted defeat in the run-off\u2026 [+2165 chars]"
+                }
+            ]
+        }
+    },
+    "test_tool_args_schema": "GetNewsArticlesInput",
+    "test_tool_description": "Retrieves news articles from NewsAPI.",
+    "test_tool_name": "Get News Articles"
+}
