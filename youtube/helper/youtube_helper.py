@@ -13,11 +13,13 @@ class YoutubeHelper:
         self.youtube_client = googleapiclient.discovery.build(
             api_service_name, api_version, developerKey=youtube_key)
 
-    def youtube_request(self, part: str = "id,snippet", id: str = None):
+    def youtube_request(self, part: str = None, maxResults: int = 25, id: str = None, q: str = None):
         try:
             request = self.youtube_client.channels().list(
                     part=part,
-                    id=id
+                    maxResults=maxResults,
+                    id=id,
+                    q=q
             )
             response = request.execute()
             return response
