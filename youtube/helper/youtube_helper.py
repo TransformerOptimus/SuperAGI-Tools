@@ -13,15 +13,16 @@ class YoutubeHelper:
         self.youtube_client = googleapiclient.discovery.build(
             api_service_name, api_version, developerKey=youtube_key)
 
-    def get_video_info(self, video_link):
-        # Getting video id
-        video_id = parse_qs(video_link)["v"][0]
+    def youtube_request(self, part: str = "id,snippet", id: str = None):
+        try:
+            request = self.youtube_client.channels().list(
+                    part=part,
+                    id=id
+            )
+            response = request.execute()
+            return response
+        except Exception as err:
+            return err
 
-        # Request
-        request = self.youtube_client.videos().list(
-            part="snippet,contentDetails,statistics",
-            id=video_id
-        )
-        response = request.execute()
-
-        return response
+    def get_video_id(self, video_link):
+        return parse_qs(video_link)["v"][0]
