@@ -10,9 +10,9 @@ class YoutubeSearchSchema(BaseModel):
 
 class YoutubeSearchTool(BaseTool):
     """
-    Youtube fetch comments tool
+    Youtube search tool
     """
-    name: str = "YouTube video comments fetch Tool"
+    name: str = "Youtube search tool"
     args_schema: Type[YoutubeSearchSchema] = YoutubeSearchSchema
     description: str = "Tool for using youtube search"
 

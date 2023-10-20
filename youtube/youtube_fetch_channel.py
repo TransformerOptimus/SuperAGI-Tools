@@ -31,7 +31,7 @@ class YoutubeFetchChannelTool(BaseTool):
         """
         try:
             # Checking for args
-            args = [content_owner_id, content_owner_id, channel_id, username]
+            args = [content_owner_id, channel_id, username]
             request_id = None
             for arg in args:
                 if arg is not None:
@@ -45,7 +45,7 @@ class YoutubeFetchChannelTool(BaseTool):
 
             # Making the request
             part="id,snippet,auditDetails,brandingSettings,contentDetails,contentOwnerDetails,localizations,statistics,status,topicDetails"
-            request = youtube_helper.youtube_request(part, request_id)
+            request = youtube_helper.youtube_request(part=part, id=request_id)
             channel_info = request['items']
             
             print("Channel info fetched successfully")

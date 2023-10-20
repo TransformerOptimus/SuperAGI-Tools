@@ -5,7 +5,7 @@ from helper.youtube_helper import YoutubeHelper
 
 
 class YoutubeFetchVideoSchema(BaseModel):
-    video_links: list = Field(..., description="List of links of videos to be fetched, can be one but not None")
+    video_links: list = Field(..., description="List of links to videos to be fetched. Can be one but not None")
 
 
 class YoutubeFetchVideoTool(BaseTool):
@@ -24,10 +24,10 @@ class YoutubeFetchVideoTool(BaseTool):
             video_link: link to the video that is to be fetched
 
         Returns:
-            List:Video info, if fetched successfully, otherwise an error message
+            List: Video info, if fetched successfully, otherwise an error message
         """
         try:
-            if video_links is None:
+            if not video_links:
                 raise ValueError("At least one argument must be provided")
 
             youtube_key = self.get_tool_config('YOUTUBE_KEY')
@@ -40,11 +40,11 @@ class YoutubeFetchVideoTool(BaseTool):
 
             # Making the request
             part="id,snippet,contentDetails,fileDetails,liveStreamingDetails,localizations,player,processingDetails,recordingDetails,statistics,status,suggestions,topicDetails",
-            request = youtube_helper.youtube_request(part, video_ids)
-            video_info = request['items']
+            request = youtube_helper.youtube_request(part=part, id=video_ids)
+            videos_info = request['items']
 
-            print("Video info fetched successfully")
-            return video_info
+            print("Videos' info fetched successfully")
+            return videos_info
         except Exception as err:
-            print("Error occured while fetching video")
+            print("Error occured while fetching videos")
             return err
