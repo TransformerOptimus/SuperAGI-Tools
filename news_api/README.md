@@ -15,19 +15,19 @@ Before using the NewsAPI Toolkit, make sure you have the following prerequisites
 Follow these steps to set up and use the NewsAPI Toolkit:
 
 1.  **Installation:**
--    Clone this repository to your local machine.
+-   Clone this repository to your local machine.
 -   Install the required Python packages using `pip`:
-      ```
-      pip install -r requirements.txt
-      ```
+```
+pip install -r requirements.txt
+```
 
 
 2.  **API Key Configuration:**
 
--    Open the `config.py` file and replace `YOUR_NEWSAPI_API_KEY` with your NewsAPI API key.
+-   Open the `config.py` file and replace `YOUR_NEWSAPI_API_KEY` with your NewsAPI API key.
 3.  **Run the Toolkit:**
 
--    Execute the toolkit by running the script:
+-   Execute the toolkit by running the script:
 
       ```
       python newsapi_articles_tool.py
@@ -35,8 +35,8 @@ Follow these steps to set up and use the NewsAPI Toolkit:
 
 4.  **Toolkit Usage:**
 
--    The toolkit allows you to search for news articles by keywords, sources, language, and maximum results.
--    You can use the `GetNewsArticlesInput` parameters to customize your query.
+-   The toolkit allows you to search for news articles by keywords, sources, language, and maximum results.
+-   You can use the `GetNewsArticlesInput` parameters to customize your query.
 
 ## Example Usage
 
