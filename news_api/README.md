@@ -29,9 +29,9 @@ pip install -r requirements.txt
 
 -   Execute the toolkit by running the script:
 
-      ```
-      python newsapi_articles_tool.py
-      ```
+```
+python newsapi_articles_tool.py
+```
 
 4.  **Toolkit Usage:**
 
