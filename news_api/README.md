@@ -18,7 +18,7 @@ Follow these steps to set up and use the NewsAPI Toolkit:
 
    - Clone this repository to your local machine.
    - Install the required Python packages using `pip`:
-   
+
      ```
      pip install -r requirements.txt
      ```
@@ -30,7 +30,7 @@ Follow these steps to set up and use the NewsAPI Toolkit:
 3. **Run the Toolkit:**
 
    - Execute the toolkit by running the script:
-   
+
      ```
      python newsapi_articles_tool.py
      ```
@@ -59,3 +59,4 @@ result = news_tool._execute(**tool_input.dict())
 # Access the retrieved news articles
 articles = result.get("articles")
 print(articles)
+```
