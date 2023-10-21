@@ -7,7 +7,7 @@ sys.path.append(module_path)
 print(module_path)
 
 from newsapi_toolkit import NewsAPIToolkit
-from get_news_articles_tool import GetNewsArticlesTool, GetNewsArticlesInput
+from get_news_articles_tool import GetNewsArticlesTool
 
 class NewsAPIToolkitTests(unittest.TestCase):
 
