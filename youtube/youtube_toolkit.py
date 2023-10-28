@@ -10,7 +10,7 @@ from youtube_search import YoutubeSearchTool
 
 
 
-class GreetingsToolkit(BaseToolkit, ABC):
+class YoutubeToolkit(BaseToolkit, ABC):
     name: str = "YouTube Toolkit"
     description: str = "YouTube Tool kit contains all tools related to YouTube"
 
