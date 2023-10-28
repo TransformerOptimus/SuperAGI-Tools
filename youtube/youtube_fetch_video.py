@@ -21,30 +21,27 @@ class YoutubeFetchVideoTool(BaseTool):
         Execute the Youtube fetch video tool
 
         Args:
-            video_link: link to the video that is to be fetched
+            video_links: List of links of videos to be fetched. Can fetch info 
+                         for multiple videos
 
         Returns:
             List: Video info, if fetched successfully, otherwise an error message
         """
-        try:
-            if not video_links:
-                raise ValueError("At least one argument must be provided")
+        if not video_links:
+            raise ValueError("At least one argument must be provided")
 
-            youtube_key = self.get_tool_config('YOUTUBE_KEY')
-            youtube_helper = YoutubeHelper(youtube_key)
+        youtube_key = self.get_tool_config('YOUTUBE_KEY')
+        youtube_helper = YoutubeHelper(youtube_key)
 
-            # Getting the video ids
-            video_ids = ""
-            for link in video_links:
-                video_ids += youtube_helper.get_video_id(link) + ","
+        # Getting the video ids
+        video_ids = ""
+        for link in video_links:
+            video_ids += youtube_helper.get_video_id(link) + ","
 
-            # Making the request
-            part="id,snippet,contentDetails,fileDetails,liveStreamingDetails,localizations,player,processingDetails,recordingDetails,statistics,status,suggestions,topicDetails",
-            request = youtube_helper.youtube_request(part=part, id=video_ids)
-            videos_info = request['items']
+        # Making the request
+        part='''id,snippet,contentDetails,liveStreamingDetails,recordingDetails,statistics,status,topicDetails'''
+        request = youtube_helper.youtube_request_video(part=part, id=video_ids)
+        videos_info = request['items']
 
-            print("Videos' info fetched successfully")
-            return videos_info
-        except Exception as err:
-            print("Error occured while fetching videos")
-            return err
+        print("Videos' info fetched successfully")
+        return videos_info
