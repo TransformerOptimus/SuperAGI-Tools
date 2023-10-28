@@ -29,27 +29,27 @@ class YoutubeFetchChannelTool(BaseTool):
         Returns:
             List: Channel info, if fetched successfully, otherwise an error message
         """
-        try:
-            # Checking for args
-            args = [content_owner_id, channel_id, username]
-            request_id = None
-            for arg in args:
-                if arg is not None:
-                    request_id = arg
-                    break
-            if request_id is None:
-                raise ValueError("At least one argument must be provided")
 
-            youtube_key = self.get_tool_config('YOUTUBE_KEY')
-            youtube_helper = YoutubeHelper(youtube_key)
+        # Checking for args
+        args = [content_owner_id, channel_id, username]
+        request_id = None
+        for arg in args:
+            if arg is not None:
+                request_id = arg
+                break
+        if request_id is None:
+            raise ValueError("At least one argument must be provided")
 
-            # Making the request
-            part="id,snippet,auditDetails,brandingSettings,contentDetails,contentOwnerDetails,localizations,statistics,status,topicDetails"
-            request = youtube_helper.youtube_request(part=part, id=request_id)
-            channel_info = request['items']
-            
-            print("Channel info fetched successfully")
-            return channel_info
-        except Exception as err:
-            print("Error occured while fetching channel info")
-            return err
+        youtube_key = self.get_tool_config('YOUTUBE_KEY')
+        youtube_helper = YoutubeHelper(youtube_key)
+
+        # Making the request
+        part="id,snippet,brandingSettings,localizations,statistics,status,topicDetails"
+        request = youtube_helper.youtube_client.channels().list(
+            part=part,
+            id=request_id,
+        ).execute()
+        channel_info = request['items']
+
+        print("Channel info fetched successfully")
+        return channel_info

@@ -1,4 +1,3 @@
-from urllib.parse import parse_qs
 from superagi.tools.base_tool import BaseTool
 from pydantic import BaseModel, Field
 from typing import Type
@@ -26,21 +25,21 @@ class YoutubeSearchTool(BaseTool):
         Returns:
             List: Search results, if fetched successfully, otherwise error message
         """
-        try:
-            if query is None:
-                raise ValueError("At least one argument must be provided")
-            
-            youtube_key = self.get_tool_config('YOUTUBE_KEY')
-            youtube_helper = YoutubeHelper(youtube_key)
 
-            # Making the request
-            part = "snippit"
-            request = youtube_helper.youtube_request(part=part, q=query)
+        if query is None:
+            raise ValueError("At least one argument must be provided")
+        
+        youtube_key = self.get_tool_config('YOUTUBE_KEY')
+        youtube_helper = YoutubeHelper(youtube_key)
 
-            results = request['items']
-            
-            print("Query successful")
-            return results
-        except Exception as err:
-            print("Error fetching search results")
-            return err
+        # Making the request
+        part = "snippet"
+        # request = youtube_helper.youtube_request(part=part, q=query)
+        request = youtube_helper.youtube_client.search().list(
+            part=part,
+            maxResults=25,
+            q=query
+        ).execute()
+        print("Query successful")
+
+        return request['items']

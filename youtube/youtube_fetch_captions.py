@@ -2,10 +2,12 @@ from superagi.tools.base_tool import BaseTool
 from pydantic import BaseModel, Field
 from typing import Type
 from helper.youtube_helper import YoutubeHelper
+from youtube_transcript_api import YouTubeTranscriptApi
 
 
 class YoutubeFetchCaptionsSchema(BaseModel):
-    video_link: list = Field(..., description="Link of video whose captions are to be fetched")
+    video_link: str = Field(..., description='''Link of video whose captions 
+                            are to be fetched''')
 
 
 class YoutubeFetchCaptionsTool(BaseTool):
@@ -24,7 +26,8 @@ class YoutubeFetchCaptionsTool(BaseTool):
             video_link: Link of video whose captions are to be fetched
 
         Returns:
-            List: Video transcript, if fetched successfully, otherwise an error message
+            List: Video transcript list with time stamp (text, time), if fetched 
+            successfully, otherwise an error message
         """
         if not video_link:
             raise ValueError("At least one argument must be provided")
@@ -35,9 +38,11 @@ class YoutubeFetchCaptionsTool(BaseTool):
         # Getting the video id
         video_id = youtube_helper.get_video_id(video_link)
 
-        # Making the request
-        request = youtube_helper.youtube_request_video_captions(videoId=video_id)
-        videos_info = request
+        # Getting the transcript
+        transcript = YouTubeTranscriptApi.get_transcript(video_id)
+        final_captions = []
+        for line in transcript:
+            final_captions.append((line['text'], line['start']))
 
         print("Videos' transcript fetched successfully")
-        return videos_info
+        return final_captions

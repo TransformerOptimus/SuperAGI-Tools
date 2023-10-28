@@ -5,7 +5,8 @@ from helper.youtube_helper import YoutubeHelper
 
 
 class YoutubeFetchVideoSchema(BaseModel):
-    video_links: list = Field(..., description="List of links to videos to be fetched. Can be one but not None")
+    video_links: list = Field(..., description='''List of links to videos to be 
+                              fetched. Can be one but not None''')
 
 
 class YoutubeFetchVideoTool(BaseTool):
@@ -39,8 +40,12 @@ class YoutubeFetchVideoTool(BaseTool):
             video_ids += youtube_helper.get_video_id(link) + ","
 
         # Making the request
-        part='''id,snippet,contentDetails,liveStreamingDetails,recordingDetails,statistics,status,topicDetails'''
-        request = youtube_helper.youtube_request_video(part=part, id=video_ids)
+        part='''id,snippet,contentDetails,liveStreamingDetails,
+                recordingDetails,statistics,status,topicDetails'''
+        request = youtube_helper.youtube_client.videos().list(
+                part=part,
+                id=video_ids,
+        ).execute()
         videos_info = request['items']
 
         print("Videos' info fetched successfully")
