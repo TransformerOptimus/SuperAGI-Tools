@@ -6,10 +6,10 @@ from superagi.lib.logger import logger
 from pydantic import BaseModel, Field
 from duckduckgo_search import DDGS
 from itertools import islice
-from superagi.helper.token_counter import TokenCounter
+from helper.token_counter import TokenCounter
 from superagi.llms.base_llm import BaseLlm
 from superagi.tools.base_tool import BaseTool
-from superagi.helper.webpage_extractor import WebpageExtractor
+from helper.webpage_extractor import WebpageExtractor
 
 #Const variables
 DUCKDUCKGO_MAX_ATTEMPTS = 3
