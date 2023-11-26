@@ -1,0 +1,5 @@
+requests==2.31.0
+superagi-tools==1.0.7
+pydantic==1.10.8
+pytest==7.4.0
+pytest-mock==3.11.1
